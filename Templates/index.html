@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>T&T Lab</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <style>
+            body{
+                background-image: url("../static/color.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                color: white;
+                overflow: hidden;
+            }
+            .size{
+                width: 10rem;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <h1>T&T Minor Project</h1>
+            <h3>Flask based web application for attendance report generation from meet/zoom saved chats</h3>
+            <form class="form-horizontal" action={{ url_for('result') }}  method="post">
+                <div class="form-group">
+                    <br><br><br>
+                    <label class="control-label col-xs-4" for="var_1">File URL</label>
+                    <div class="col-xs-5">
+                        <input type="text" class="form-control" name="var_2" placeholder="Enter URL of the csv file">
+                    </div><br><br><br>
+                    <label class="control-label col-xs-4" for="var_4">Source File Path</label>
+                    <div class="col-xs-5">
+                        <input type="text" class="form-control" name="var_3" placeholder="Enter URL for excel file">
+                    </div><br>
+                </div><br><br>
+                <div class="form-group fill">
+                    <div class="col-xs-offset-3 col-xs-6">
+                        <input type="submit" class="btn btn-success size" value="Submit">
+                        <input type="reset" class="btn btn-danger size" value="Reset">
+                    </div>
+                </div>
+            </form>
+            <br><br><h3>Attendance report</h3><b> Absent List :</b><br>{{pred}}<br>
+        </center>
+    </body>
+</html>
